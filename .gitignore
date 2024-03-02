@@ -1,0 +1,17 @@
+TF.Domain/bin/*
+TF.Domain/obj/*
+TF.Domain/.vs/*
+
+TF.Console/bin/*
+TF.Console/obj/*
+TF.Console/.vs/*
+
+TF.Repository/bin/*
+TF.Repository/obj/*
+TF.Repository/.vs/*
+
+TF.Web/bin/*
+TF.Web/obj/*
+TF.Web/.vs/*
+
+.vs/*

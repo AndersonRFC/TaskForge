@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\script.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\script.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\script.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TF.Domain\TF.Domain.csproj" />
+    <ProjectReference Include="..\TF.Repository\TF.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

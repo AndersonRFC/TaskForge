@@ -1,0 +1,56 @@
+﻿@model IEnumerable<WorkItem>
+@{
+	ViewData["Title"] = "WorkItems";
+}
+
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Name)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Description)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CreatedAt)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Completed)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ItemOrder)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody class="task-list">
+
+		@foreach (var workItem in Model)
+		{
+			<tr class="task" draggable="true">
+				<td>
+					@Html.DisplayFor(modelItem => workItem.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => workItem.Description)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => workItem.CreatedAt)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => workItem.Completed)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => workItem.ItemOrder)
+				</td>
+				<td>
+					<a class="btn btn-success" asp-action="Editar" asp-route-id="@workItem.Id">Editar</a>
+					<a class="btn btn-warning" asp-action="Excluir" asp-route-id="@workItem.Id">Excluir</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+
+
+</table>

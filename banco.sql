@@ -1,0 +1,22 @@
+CREATE TABLE Task (
+    Id INTEGER PRIMARY KEY,
+    Nome VARCHAR(100),
+    Description VARCHAR(9999),
+    CreatedAt DATE,
+    Completed BOOLEAN,
+    TaskOrder INTEGER
+);
+
+CREATE SEQUENCE Seq_Task_Id;
+
+SET TERM ^ ;
+
+CREATE TRIGGER Task_BI FOR Task
+BEFORE INSERT
+AS
+BEGIN
+  IF (NEW.Id IS NULL) THEN
+    NEW.Id = NEXT VALUE FOR Seq_Task_Id;
+END^
+
+SET TERM ; ^
